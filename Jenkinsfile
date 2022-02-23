@@ -12,7 +12,7 @@ pipeline{
 
         stage('Rodando Projeto'){
             steps{
-                sh 'docker run -it -p 3000:3000 ezops-test-jackson:latest bash'
+                sh 'docker run -p 3000:3000 ezops-test-jackson:latest bash'
             }
         }
 
