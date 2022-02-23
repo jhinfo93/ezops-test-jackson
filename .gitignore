@@ -1,0 +1,3 @@
+/node_modules
+*.txt
+/code/package-lock.json
