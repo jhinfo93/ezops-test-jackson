@@ -1,6 +1,6 @@
 version: '2'
 services:
-  ezOps-teste:
+  ezops-teste:
     container_name: ezOps-teste
     restart: always
     build:
