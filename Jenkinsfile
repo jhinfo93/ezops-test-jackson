@@ -4,9 +4,15 @@ pipeline{
 
     stages{     
 
-        stage('compose up '){
+        stage('Bildando Projeto'){
             steps{
-                sh 'sudo docker-compose up --build --force-recreate -d'
+                sh 'docker build -t ezops-test-jackson:latest .'
+            }
+        }
+
+        stage('Rodando Projeto'){
+            steps{
+                sh 'docker run -it -p 3000:3000 ezops-test-jackson:latest bash'
             }
         }
 
