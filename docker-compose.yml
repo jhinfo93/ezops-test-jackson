@@ -12,9 +12,6 @@ services:
       - ezOps-teste-network
     volumes:
       - ezOps-teste_volume:/data
-    env-file:
-      - .env
-
 volumes:
   ezOps-teste_volume:
 networks:
