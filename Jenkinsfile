@@ -6,7 +6,7 @@ pipeline{
         stage('compose up '){
             steps{
 
-                sh 'docker-compose down && docker-compose up --build --force-recreate -d'
+                sh 'docker-compose up --build --force-recreate -d'
             }
         }
         // stage('Bildando Projeto'){
@@ -20,7 +20,5 @@ pipeline{
         //         sh 'docker run -p 3000:3000 ezops-test-jackson:latest bash'
         //     }
         // }
-
-     
     }
 }

@@ -25,6 +25,8 @@
     </div>
 </div>
 <script>
+  const env = require('./.env')
+    = env.url
    var socket = io();
     $(() => {
         $("#send").click(()=>{
@@ -41,13 +43,13 @@
     }
 
     function getMessages(){
-      $.get('http://localhost:3000/messages', (data) => {
+      $.get('http://3.224.77.203:3000/messages', (data) => {
         data.forEach(addMessages);
       })
     }
 
     function sendMessage(message){
-      $.post('http://localhost:3000/messages', message)
+      $.post('http://3.224.77.203:3000/messages', message)
     }
 </script>
 </body>
