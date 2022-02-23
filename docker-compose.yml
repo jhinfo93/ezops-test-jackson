@@ -1,0 +1,18 @@
+version: '2'
+services:
+  ezOps-teste:
+    container_name: ezOps-teste
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    networks:
+      - ezOps-teste-network
+    volumes:
+      - ezOps-teste_volume:/data
+volumes:
+  ezOps-teste_volume:
+networks:
+  ezOps-teste-network:
