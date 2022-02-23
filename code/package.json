@@ -1,21 +1,19 @@
 {
-  "name": "demo-chat-app",
+  "name": "ez-ops",
   "version": "1.0.0",
-  "description": "demo chat app",
-  "main": "index.js",
+  "description": "aplicação para ser aprovado em vaga devops",
+  "main": "server.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
+  "author": "Jackson Henrique",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "mongoose": "^5.7.5",
-    "socket.io": "^2.1.1"
-  },
-  "devDependencies": {
-    "jasmine": "^3.1.0",
-    "request": "^2.87.0"
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "http": "^0.0.1-security",
+    "mongoose": "^6.2.3",
+    "socket.io": "^4.4.1"
   }
 }
