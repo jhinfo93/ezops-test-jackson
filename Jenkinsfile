@@ -6,7 +6,7 @@ pipeline{
         stage('compose up '){
             steps{
 
-                sh 'sudo docker-compose up --build --force-recreate -d'
+                sh 'docker-compose up --build --force-recreate -d'
             }
         }
         // stage('Bildando Projeto'){
