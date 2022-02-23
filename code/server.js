@@ -5,7 +5,6 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var mongoose = require('mongoose');
 
-
 app.use(express.static(__dirname));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}))
@@ -54,6 +53,8 @@ app.post('/messages', async (req, res) => {
   }
 
 })
+
+
 
 io.on('connection', () =>{
   console.log('a user is connected')
