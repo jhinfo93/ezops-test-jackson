@@ -29,7 +29,6 @@ app.get('/messages/:user', (req, res) => {
   })
 })
 
-
 app.post('/messages', async (req, res) => {
   try{
     var message = new Message(req.body);
