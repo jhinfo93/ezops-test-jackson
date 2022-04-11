@@ -1,5 +1,24 @@
 version: '2'
 services:
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: simplechat
+      MONGO_INITDB_ROOT_PASSWORD: simplechat
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: simplechat
+      ME_CONFIG_MONGODB_ADMINPASSWORD: simplechat
+      ME_CONFIG_MONGODB_URL: mongodb://simplechat:simplechat@mongo:27017/
+
+
+
   ezops-teste:
     container_name: ezOps-teste
     restart: always

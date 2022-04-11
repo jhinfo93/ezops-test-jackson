@@ -25,6 +25,7 @@
     </div>
 </div>
 <script>
+  
    var socket = io();
     $(() => {
         $("#send").click(()=>{
@@ -53,6 +54,8 @@
     function sendMessage(message){
       $.post('http://3.224.77.203:3000/messages', message)
     }
+
+
 </script>
 </body>
 </html>
