@@ -17,9 +17,9 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: simplechat
       ME_CONFIG_MONGODB_URL: mongodb://simplechat:simplechat@mongo:27017/
 
-
-
   ezops-teste:
+    depends_on:
+      - mongo
     container_name: ezOps-teste
     restart: always
     build:
