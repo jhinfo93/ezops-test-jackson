@@ -14,7 +14,7 @@ var Message = mongoose.model('Message',{
   message : String
 })
 // var dbUrl = "mongodb://simplechat:simplechat@mongo:27017/myFirstDatabase";
-var dbUrl = "mongodb://simplechat:simplechat@127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb/myFirstDatabase";
+var dbUrl = "mongodb://simplechat:simplechat@184.73.241.107:27017/?compressors=disabled&gssapiServiceName=mongodb/myFirstDatabase";
 app.get('/messages', (req, res) => {
   Message.find({},(err, messages)=> {
     res.send(messages);
