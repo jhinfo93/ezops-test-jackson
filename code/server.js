@@ -15,7 +15,7 @@ var Message = mongoose.model('Message',{
 })
 // var dbUrl = "mongodb://simplechat:simplechat@mongo:27017/myFirstDatabase";
 // var dbUrl = "mongodb://mongo:27017/simplechat";
-var dbUrl = "mongodb://root:example@184.73.241.107:27017/admin";
+var dbUrl = "mongodb://root:example@127.0.0.1:27017/admin";
 app.get('/messages', (req, res) => {
   Message.find({},(err, messages)=> {
     res.send(messages);
@@ -59,7 +59,7 @@ io.on('connection', () =>{
 })
 
 mongoose.connect(dbUrl , (err) => { 
-  console.log("mongodb connected",err);
+  console.log("mongodb connected: ",err);
 })
 
 var server = http.listen(3000, () => {
