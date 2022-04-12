@@ -46,13 +46,13 @@
     }
 
     function getMessages(){
-      $.get('localhost:3000/messages', (data) => {
+      $.get('127.0.0.1:3000/messages', (data) => {
         data.forEach(addMessages);
       })
     }
     
     function sendMessage(message){
-      $.post('localhost:3000/messages', message)
+      $.post('127.0.0.1:3000/messages', message)
     }
 
 
