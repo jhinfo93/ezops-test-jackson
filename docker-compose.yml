@@ -1,6 +1,7 @@
 version: '2'
 services:
   mongo:
+    container_name: mongodb-ezops
     image: mongo:latest
     restart: always
     ports:
@@ -12,7 +13,7 @@ services:
   ezops-teste:
     depends_on:
       - mongo
-    container_name: ezOps-teste
+    container_name: ezOps-backend
     restart: always
     build:
       context: ./
@@ -21,6 +22,7 @@ services:
       - 3000:3000
 
   nginx:
+    container_name: nginx-ezops
     image: nginx:latest
     restart: always
     ports:
