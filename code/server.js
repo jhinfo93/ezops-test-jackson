@@ -15,7 +15,7 @@ var Message = mongoose.model('Message',{
 })
 
 // var dbUrl = "mongodb://root:example@184.73.241.107:27017";
-var dbUrl = "mongodb://root:example@172.19.0.3:27017";
+var dbUrl = "mongodb://admin:simplechat@mongodb:27017";
 app.get('/messages', (req, res) => {
   Message.find({},(err, messages)=> {
     res.send(messages);

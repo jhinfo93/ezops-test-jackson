@@ -1,32 +1,45 @@
 version: '2'
+
+networks:
+    network-ezops:
+       driver:
+          bridge
+
 services:
-  mongo:
-    container_name: mongodb-ezops
+  mongodb:
+    container_name: mongodb
     image: mongo:latest
     restart: always
     ports:
       - 27017:27017
+    networks:
+      - network-ezops 
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: simplechat
       
-  ezops-teste:
+  backend:
     depends_on:
-      - mongo
-    container_name: ezOps-backend
+      - mongodb
+    container_name: backend
     restart: always
     build:
       context: ./
       dockerfile: Dockerfile
     ports:
       - 3000:3000
+    networks:
+      - network-ezops 
 
   nginx:
-    container_name: nginx-ezops
+    container_name: nginx
     image: nginx
     restart: always
     ports:
       - 80:80
+    networks:
+      - network-ezops   
     volumes:
       - "./default.conf:/etc/nginx/conf.d/default.conf"
+      - "./hosts:/etc/hosts"
 
