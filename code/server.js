@@ -5,6 +5,10 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var mongoose = require('mongoose');
 
+
+require('dotenv').load //Carregar variaveis de ambiente
+
+
 app.use(express.static(__dirname));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}))
@@ -14,8 +18,13 @@ var Message = mongoose.model('Message',{
   message : String
 })
 
-// var dbUrl = "mongodb://root:example@184.73.241.107:27017";
-var dbUrl = "mongodb://admin:simplechat@mongodb:27017";
+const user = process.env.mongo_user
+const pass = process.env.mongo_psw
+const port = process.env.mongo_port
+const host = process.env.mongo_host
+
+var dbUrl = `mongodb://${user}:${pass}@${host}:${port}`;
+
 app.get('/messages', (req, res) => {
   Message.find({},(err, messages)=> {
     res.send(messages);

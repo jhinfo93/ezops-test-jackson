@@ -14,9 +14,8 @@ services:
       - 27017:27017
     networks:
       - network-ezops 
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: simplechat
+    env_file:
+      - .env
       
   backend:
     depends_on:
@@ -30,6 +29,8 @@ services:
       - 3000:3000
     networks:
       - network-ezops 
+    env_file:
+      - .env
 
   nginx:
     container_name: nginx

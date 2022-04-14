@@ -1,6 +1,13 @@
+## Sejam Bem-vindos - EzOps Labs
 
-Aplicação para teste
+## Description
+```
+Aplicação criada para estudos de laboratório de ambiente com o intuito de treinar as melhores práticas de criação de ambiente.
 
-Comando para criar container com volume compartilhado
+```
 
-docker run -it -v "C:\Users\jacks\Desktop\ezops-test-jackson:/app" -p 3000:3000 -w /app  node:latest bash
+## Como usar:
+```
+Para executar a aplicação, primeiramente será necessário criar O ".env" da sua aplicação
+
+```
