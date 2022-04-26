@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - npm install
+  
+  build:
+    commands:
+      - npm run build
+  
+  post_build:
+    - aws s3 cp build s3://jackinho --recursive --acl public-read
